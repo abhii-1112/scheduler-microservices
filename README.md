@@ -43,3 +43,28 @@ This service includes API endpoints to create, list, and retrieve jobs, while pe
 ```bash
 git clone https://github.com/username/job-scheduler-microservice.git
 cd job-scheduler-microservice
+```
+2. **Create a virtual environment and activate**
+```bash
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS/Linux
+source .venv/bin/activate
+``` 
+3. **Install Dependencies**
+```bash
+pip install -r requirements.txt
+``` 
+4. **Create .env file**
+```bash
+DATABASE_URL=postgresql+psycopg2://<USER>:<PASSWORD>@localhost:5432/<DBNAME>
+```
+5. **Initialize the database**
+```bash
+python -m app.database
+```
+6. **Run the app**
+```bash
+uvicorn app.main:app --reload
+```
